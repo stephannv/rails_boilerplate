@@ -8,11 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Cache vendor
-        uses: actions/cache@v2
+      - name: Setup cache
+        uses: ruby/setup-ruby@v1
         with:
-          path: ./vendor
-          key: vendor
+          bundler-cache: true
 
       - name: start server
         run: docker-compose up -d
