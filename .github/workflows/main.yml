@@ -8,6 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Cache vendor
+        uses: actions/cache@v2
+        with:
+          path: ./vendor
+          key: vendor
+
       - name: start server
         run: docker-compose up -d
 
