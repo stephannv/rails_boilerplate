@@ -19,6 +19,6 @@ COPY ./Gemfile.lock /app/Gemfile.lock
 
 RUN bundle config set --local path vendor/cache
 RUN bundle cache
-COPY vendor/cache /app/vendor/cache
+COPY vendor/ /app/vendor/
 
 RUN bundle install --local
