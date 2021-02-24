@@ -15,8 +15,7 @@ RUN gem install bundler
 WORKDIR /app
 
 COPY Gemfile Gemfile.lock /app/
-COPY vendor/cache/ /app/vendor/cache
-
+COPY vendor/cache /app/vendor/cache
 
 RUN gem install bundler
 RUN bundle install --local
