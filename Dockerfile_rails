@@ -14,11 +14,9 @@ RUN gem install bundler
 # config home environment
 WORKDIR /app
 
-COPY ./Gemfile /app/Gemfile
-COPY ./Gemfile.lock /app/Gemfile.lock
+COPY Gemfile Gemfile.lock /app/
+COPY vendor/cache/ /app/vendor/cache
 
-RUN bundle config set --local path vendor/cache
-RUN bundle cache
-COPY vendor/ /app/vendor/
 
+RUN gem install bundler
 RUN bundle install --local
