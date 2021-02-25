@@ -5,6 +5,9 @@ on: push
 jobs:
   tests:
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_CACHE_PATH: vendor/bundle
+      BUNDLE_PATH: vendor/bundle
     steps:
       - uses: actions/checkout@v2
 
@@ -15,6 +18,9 @@ jobs:
 
       - name: check files
         run: ls vendor
+
+      - name: echo
+        run: echo $BUNDLE_CACHE_PATH
 
       - name: save cache
         run: bundle package
