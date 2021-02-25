@@ -17,10 +17,7 @@ jobs:
           bundler-cache: true
 
       - name: check files
-        run: ls vendor
-
-      - name: gem install bundler
-        run: gem install bundler
+        run: ls vendor/bundle
 
       - name: echo
         run: echo $BUNDLE_CACHE_PATH
