@@ -25,9 +25,6 @@ jobs:
       - name: bundle package
         run: bundle package
 
-      - name: bundle cache
-        run: bundle cache
-
       - name: check files2
         run: ls vendor
 
