@@ -16,6 +16,12 @@ jobs:
       - name: check files
         run: ls vendor
 
+      - name: save cache
+        run: bundle package
+
+      - name: check files2
+        run: ls vendor
+
       - name: start server
         run: docker-compose up -d
 
