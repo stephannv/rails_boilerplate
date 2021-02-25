@@ -19,11 +19,17 @@ jobs:
       - name: check files
         run: ls vendor
 
+      - name: gem install bundler
+        run: gem install bundler
+
       - name: echo
         run: echo $BUNDLE_CACHE_PATH
 
-      - name: save cache
+      - name: bundle package
         run: bundle package
+
+      - name: bundle cache
+        run: bundle cache
 
       - name: check files2
         run: ls vendor
