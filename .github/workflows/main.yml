@@ -27,6 +27,12 @@ jobs:
       
       - name: check files
         run: ls -l ./vendor/bundle
+        
+      - name: pwd
+        run: pwd
+        
+      - name: check cache
+        run: ls -l /home/runner/work/rails_boilerplate/rails_boilerplate/vendor/bundle
 
       - name: start server
         run: docker-compose up -d
