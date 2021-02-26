@@ -24,6 +24,15 @@ jobs:
       
       - name: check files
         run: ls -l vendor/bundle/ruby
+      
+      - name: check files
+        run: ls -l ./rails_boilerplate/vendor/bundle
+      
+      - name: check files
+        run: ls -l rails_boilerplate/vendor/bundle
+      
+      - name: check files
+        run: ls -l ./vendor/bundle
 
       - name: start server
         run: docker-compose up -d
