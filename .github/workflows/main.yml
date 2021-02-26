@@ -18,6 +18,9 @@ jobs:
       
       - name: check files
         run: ls -l vendor/bundle
+      
+      - name: check files
+        run: ls -l vendor/bundle/ruby
 
       - name: start server
         run: docker-compose up -d
