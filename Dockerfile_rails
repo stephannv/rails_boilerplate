@@ -14,13 +14,15 @@ RUN npm install -g yarn
 # config home environment
 WORKDIR /app
 
-RUN ls ./
+RUN echo ls -l ./
+
+RUN echo ls -l ./vendor/bundle
 
 COPY Gemfile Gemfile.lock /app/
-COPY /vendor/bundle /app/vendor/bundle
+# COPY /vendor/bundle /app/vendor/bundle
 ENV BUNDLE_CACHE_PATH "vendor/bundle"
 ENV BUNDLE_PATH "/app/vendor/bundle"
 # ENV GEM_HOME "/app/vendor/bundle"
 
 # RUN gem install bundler
-# RUN bundle install --local
+RUN bundle install --local
