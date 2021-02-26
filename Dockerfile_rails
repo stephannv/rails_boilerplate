@@ -9,13 +9,15 @@ RUN apk add --no-cache \
 RUN npm install -g yarn
 
 # install bundler
-RUN gem install bundler
+# RUN gem install bundler
 
 # config home environment
 WORKDIR /app
 
+RUN ls /vendor/bundle
+
 COPY Gemfile Gemfile.lock /app/
-COPY vendor/bundle /app/vendor/bundle
+COPY /vendor/bundle /app/vendor/bundle
 ENV BUNDLE_CACHE_PATH "vendor/bundle"
 ENV BUNDLE_PATH "/app/vendor/bundle"
 # ENV GEM_HOME "/app/vendor/bundle"
