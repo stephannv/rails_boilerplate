@@ -5,9 +5,6 @@ on: push
 jobs:
   tests:
     runs-on: ubuntu-latest
-    env:
-      BUNDLE_CACHE_PATH: vendor/bundle
-      BUNDLE_PATH: vendor/bundle
     steps:
       - uses: actions/checkout@v2
 
@@ -18,15 +15,6 @@ jobs:
 
       - name: check files
         run: ls vendor/bundle
-
-      - name: echo
-        run: echo $BUNDLE_CACHE_PATH
-
-      - name: bundle package
-        run: bundle package
-
-      - name: check files2
-        run: ls vendor
 
       - name: start server
         run: docker-compose up -d
