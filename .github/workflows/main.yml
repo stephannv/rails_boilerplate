@@ -12,9 +12,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-
+      
       - name: check files
-        run: ls vendor/bundle
+        run: ls -l vendor
+      
+      - name: check files
+        run: ls -l vendor/bundle
 
       - name: start server
         run: docker-compose up -d
